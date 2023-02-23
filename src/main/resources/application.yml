@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: notification-service
+---
+debug: false
+
+server:
+  port: 8010
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: ON_PARAM
+    include-exception: false
+---
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - info
+          - mappings
+          - health
+          - prometheus
+          - refresh
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: always
+    mappings:
+      enabled: true
+    prometheus:
+      enabled: true
+---
+logging:
+  level:
+    org:
+      springframework: INFO
+    com:
+      tong: DEBUG
+  config: ${LOGGING_CONFIG_FILE:classpath:log4j2.xml}
