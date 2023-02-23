@@ -1,10 +1,10 @@
-package com.tong.notificationservice;
+package com.tong.notification;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class NotificationServiceApplicationTests {
+class NotificationApplicationTests {
 
     @Test
     void contextLoads() {

@@ -1,8 +1,8 @@
-package com.tong.notificationservice.controller;
+package com.tong.notification.controller;
 
-import com.tong.notificationservice.api.slack.SlackNotificationTrigger;
-import com.tong.notificationservice.model.slack.SlackMessageRequestDto;
-import com.tong.notificationservice.model.slack.SlackThreadMessageRequestDto;
+import com.tong.notification.api.slack.SlackNotificationTrigger;
+import com.tong.notification.model.slack.SlackMessageRequestDto;
+import com.tong.notification.model.slack.SlackThreadMessageRequestDto;
 import org.springframework.http.ResponseEntity;
 
 public class SlackNotificationTriggerImpl implements SlackNotificationTrigger {

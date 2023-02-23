@@ -1,4 +1,4 @@
-package com.tong.notificationservice.model.slack;
+package com.tong.notification.model.slack;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package com.tong.notificationservice.service;
+package com.tong.notification.service;
 
 import java.util.Optional;
 
