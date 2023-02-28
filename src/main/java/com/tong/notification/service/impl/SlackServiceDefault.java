@@ -3,7 +3,7 @@ package com.tong.notification.service.impl;
 import com.slack.api.methods.MethodsClient;
 import com.slack.api.methods.SlackApiException;
 import com.slack.api.methods.response.chat.ChatPostMessageResponse;
-import com.tong.notification.Exception.SlackNotificationException;
+import com.tong.notification.exception.SlackNotificationException;
 import com.tong.notification.service.CachedThreadService;
 import com.tong.notification.service.SlackService;
 import lombok.Data;

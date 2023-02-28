@@ -1,4 +1,4 @@
-package com.tong.notification.Exception;
+package com.tong.notification.exception;
 
 import lombok.Getter;
 

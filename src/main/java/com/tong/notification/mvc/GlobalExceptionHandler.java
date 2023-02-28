@@ -1,6 +1,6 @@
 package com.tong.notification.mvc;
 
-import com.tong.notification.Exception.SlackNotificationException;
+import com.tong.notification.exception.SlackNotificationException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
