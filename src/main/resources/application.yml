@@ -31,3 +31,16 @@ management:
       enabled: true
     prometheus:
       enabled: true
+---
+schedule:
+  cron:
+    daytime: "0 0 10 * * *"
+---
+secrets:
+  slack:
+    oAuth:
+      token: ${SLACK_OAUTH_TOKEN:eG94Yi00ODY0MTI2NDc5OTA3LTQ4NjQxMzg4MzA1NDctd3NQVE91SVIyaFltUjhIQ1JNblhKaEVOCg==}
+---
+  webhook:
+    default:
+      url: https://webhook.site/1e2208c6-083e-48a0-ad31-73d943599f1d

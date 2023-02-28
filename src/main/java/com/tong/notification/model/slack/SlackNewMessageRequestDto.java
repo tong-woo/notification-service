@@ -6,11 +6,11 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class SlackMessageRequestDto {
+public class SlackNewMessageRequestDto {
     @JsonProperty("channel")
     private String channel;
     @JsonProperty("text")
     private String text;
     @JsonProperty("thread_ts")
-    private String threadID;
+    private String threadId;
 }
