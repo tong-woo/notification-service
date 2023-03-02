@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  ## RabbitMQ
+  rabbitmq:
+    container_name: rabbitmq1
+    hostname: rabbitmq1
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    deploy:
+      resources:
+        limits:
+          memory: 2048m

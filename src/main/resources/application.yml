@@ -12,6 +12,26 @@ server:
     include-stacktrace: ON_PARAM
     include-exception: false
 ---
+rabbitmq:
+  port: 5672
+  host: localhost
+  username: guest
+  password: guest
+  # make the provider ensures that the message is pushed to
+  # the exchange and that it will call back whether it succeeds or not
+  publisher-confirm-type: correlated
+  # ensure that the switch can push messages to the queue
+  publisher-returns: true
+  virtual-host: /
+  # ensure that the consumer will consume the message and manually confirm
+  listener:
+    simple:
+      acknowledge-mode: manual
+  # Defines the policy for when message routing fails.
+  # true, call ReturnCallback; false: discard the message directly
+  template:
+    mandatory: true
+---
 management:
   endpoints:
     web:
@@ -39,7 +59,7 @@ schedule:
 secrets:
   slack:
     oAuth:
-      token: ${SLACK_OAUTH_TOKEN:eG94Yi00ODY0MTI2NDc5OTA3LTQ4NjQxMzg4MzA1NDctd3NQVE91SVIyaFltUjhIQ1JNblhKaEVOCg==}
+      token: ${SLACK_OAUTH_TOKEN:xoxb-4864126479907-4864138830547-wsPTOuIR2hYmR8HCRMnXJhEN}
 ---
   webhook:
     default:
