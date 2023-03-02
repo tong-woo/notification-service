@@ -59,7 +59,7 @@ schedule:
 secrets:
   slack:
     oAuth:
-      token: ${SLACK_OAUTH_TOKEN:xoxb-4864126479907-4864138830547-wsPTOuIR2hYmR8HCRMnXJhEN}
+      token: ${SLACK_OAUTH_TOKEN:eG94Yi00ODY0MTI2NDc5OTA3LTQ4NjQxMzg4MzA1NDctd3NQVE91SVIyaFltUjhIQ1JNblhKaEVOCg==}
 ---
   webhook:
     default:
