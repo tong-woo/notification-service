@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.util.Map;
 
-@RabbitListener(queues = "TestDirectQueue")
-@Component
+//@RabbitListener(queues = "TestDirectQueue")
+//@Component
 public class DirectRabbitConsumer {
 
     @RabbitHandler
