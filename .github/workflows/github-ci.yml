@@ -15,18 +15,23 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  Maven CI:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     
     # Setup Java SDK
-    - name: Set up JDK 11
+    - name: Set up jdk 11
       uses: actions/setup-java@v3
       with:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
-    # Build packages
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
+
+    # Build
+    - name: Build with maven
+      run: mvn $MAVEN_CLI_OPTS clean test-compile package $MAVEN_EXTRA_STEP -Dit.skip=true -Dut.skip=true $MAVEN_EXTRA_OPTS
+
+    # Test
+    - name: Test with maven
+      run: mvn $MAVEN_CLI_OPTS test -Dit.skip=true $MAVEN_EXTRA_OPTS
