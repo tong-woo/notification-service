@@ -28,22 +28,15 @@ public class RabbitConfig {
 
     @Bean
     public ConnectionFactory connectionFactory() {
-        //创建工厂类
         CachingConnectionFactory cachingConnectionFactory=new CachingConnectionFactory();
-        //用户名
+        // factory config
         cachingConnectionFactory.setUsername("guest");
-        //密码
         cachingConnectionFactory.setPassword("guest");
-        //rabbitMQ地址
         cachingConnectionFactory.setHost("127.0.0.1");
-        //rabbitMQ端口
         cachingConnectionFactory.setPort(Integer.parseInt("5672"));
-
-        //设置发布消息后回调
+        // call back and confirm type
         cachingConnectionFactory.setPublisherReturns(true);
-        //设置发布后确认类型，此处确认类型为交互
         cachingConnectionFactory.setPublisherConfirmType(CachingConnectionFactory.ConfirmType.CORRELATED);
-
         cachingConnectionFactory.setCacheMode(CachingConnectionFactory.CacheMode.CHANNEL);
         return  cachingConnectionFactory;
     }
@@ -52,10 +45,8 @@ public class RabbitConfig {
     public SimpleRabbitListenerContainerFactory rabbitListenerContainerFactory() {
         SimpleRabbitListenerContainerFactory containerFactory = new SimpleRabbitListenerContainerFactory();
         containerFactory.setConnectionFactory(connectionFactory());
-        // number of concurrent consumers
         containerFactory.setConcurrentConsumers(1);
         containerFactory.setMaxConcurrentConsumers(20);
-        // setting the prefetch count -- QOS
         containerFactory.setPrefetchCount(1);
         // ack mode
         containerFactory.setAcknowledgeMode(AcknowledgeMode.MANUAL);
